@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FlashChat — Instant Group Chat</title>
+<title>Flare — Instant Group Chat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -205,23 +205,50 @@ textarea.config-ta::placeholder{color:var(--dim);font-family:'Outfit',sans-serif
 <!-- ══════════════════════════════════════
      SETUP SCREEN
 ══════════════════════════════════════ -->
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCrQHT7G9EQT3Gzpeg59fkc47OsUB0mpMY",
+    authDomain: "flare-ba5fb.firebaseapp.com",
+    databaseURL: "https://flare-ba5fb-default-rtdb.firebaseio.com",
+    projectId: "flare-ba5fb",
+    storageBucket: "flare-ba5fb.firebasestorage.app",
+    messagingSenderId: "544075322028",
+    appId: "1:544075322028:web:34c87b0b6225c9be5f0509",
+    measurementId: "G-MVF5JSV2CX"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>    
+    
+    
 <div id="screen-setup" class="screen">
   <div class="setup-wrap">
     <div class="setup-card">
       <div class="setup-logo">
-        <div class="logo-icon-sm">⚡</div>
-        <span class="logo-text">FlashChat</span>
+        <div class="logo-icon-sm">🌐</div>
+        <span class="logo-text">Flare</span>
       </div>
 
       <h1 class="setup-h">Connect to Firebase</h1>
-      <p class="setup-sub">FlashChat needs a free Firebase Realtime Database to sync messages between users. Takes about 3 minutes to set up — done once, forever.</p>
+      <p class="setup-sub">Flare needs a free Firebase Realtime Database to sync messages between users. Takes about 3 minutes to set up — done once, forever.</p>
 
       <div class="steps-box">
         <div class="step">
           <span class="step-n">1</span>
           <div>
             Go to <a href="https://console.firebase.google.com" target="_blank">console.firebase.google.com</a> and sign in.
-            Click <strong>Add project</strong>, name it anything (e.g. "flashchat"), click through and create it.
+            Click <strong>Add project</strong>, name it anything (e.g. "flarechat"), click through and create it.
           </div>
         </div>
         <div class="step">
@@ -265,8 +292,8 @@ textarea.config-ta::placeholder{color:var(--dim);font-family:'Outfit',sans-serif
   <div class="orb orb-2"></div>
   <div class="home-inner">
     <div class="home-logo">
-      <div class="logo-icon-lg">⚡</div>
-      <span class="logo-name">FlashChat</span>
+      <div class="logo-icon-lg"></div>
+      <span class="logo-name">Flare</span>
     </div>
     <p class="tagline">Instant group chat. <em>No accounts. No history.</em></p>
 
@@ -311,7 +338,7 @@ textarea.config-ta::placeholder{color:var(--dim);font-family:'Outfit',sans-serif
 <div id="screen-chat" class="screen hidden">
   <!-- Header -->
   <div class="chat-header">
-    <span class="ch-logo">⚡ FlashChat</span>
+    <span class="ch-logo">Flare</span>
     <div class="room-badge" onclick="copyLink()" title="Click to copy shareable link">
       <span class="rb-label">Room</span>
       <span id="h-code" class="rb-code">------</span>
